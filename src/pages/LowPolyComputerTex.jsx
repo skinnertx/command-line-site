@@ -8,9 +8,11 @@ import React, { useRef, useMemo, useContext, createContext } from 'react'
 import { useGLTF, Merged } from '@react-three/drei'
 
 // Constants that control the grid of computers in the scene
-const row = 10;
-const col = 10;
+const row = 7;
+const col = 21;
 const spacing = 3;
+
+export const highPolyPos = [Math.floor(row/2) * spacing, 0, Math.floor(col/2) * spacing]
 
 const context = createContext()
 export function Instances({ children, ...props }) {
@@ -57,13 +59,17 @@ export function LowPolyGrid() {
   
   for (var i = 0; i < row; i++) {
       for (var j = 0; j < col; j++) {
+        if (i != Math.floor(row / 2) || j != Math.floor(col/2)) {
           data[(i*col) + j] = [i*spacing,0,j*spacing]
+        } 
       }
   }
 
+  console.log(data);
+  
   return (
     <Instances>
-      <group position={[(spacing * row)/-2, 0, -20]}>
+      <group position={[0,0,0]}>
         {data.map((pos, i) => {
           return (
             <ComputerLowPoly key={i} position={pos} />
