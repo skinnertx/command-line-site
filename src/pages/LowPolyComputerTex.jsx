@@ -7,12 +7,7 @@ Files: lowPolyComputerTex.glb [2.7MB] > lowPolyComputerTex-transformed.glb [202.
 import React, { useRef, useMemo, useContext, createContext } from 'react'
 import { useGLTF, Merged } from '@react-three/drei'
 
-// Constants that control the grid of computers in the scene
-const row = 7;
-const col = 21;
-const spacing = 3;
 
-export const highPolyPos = [Math.floor(row/2) * spacing, 0, Math.floor(col/2) * spacing]
 
 const context = createContext()
 export function Instances({ children, ...props }) {
@@ -53,26 +48,54 @@ export function ComputerLowPoly(props) {
 
 useGLTF.preload('/lowPolyComputerTex-transformed.glb')
 
-export function LowPolyGrid() {
+{/* 
+  Create a grid of instanced low poly computer models
+
+  PARAMETERS
+  row - how many rows of computer models
+  col - how many cols of computer models
+  spacing - controls distance (x and z simultaneously) between successive models
+  omit - controls whether a single model is omitted (for placing the high poly model)
+  x - row position of omitted model
+  z - col position of omitted model
+  rot - rotation of the models
+  anchor - the position of the first model in the grid, in 3D space
+
+  all parameters are 1-indexed due to the fact that row/col must be greater
+  than 0 for any dimensionality. This made it easier to say "skip the model at
+  x=1 and z=3" and not have to deal with any OBO errors
+*/}
+export function LowPolyGrid({
+  row = 2, 
+  col = 5, 
+  spacing = 3, 
+  omit = false, 
+  x = 0, 
+  z = 0, 
+  rot=[0,0,0],
+  anchor=[0,0,0]
+}) {
   
   const data = new Array(row*col);
   
   for (var i = 0; i < row; i++) {
       for (var j = 0; j < col; j++) {
-        if (i != Math.floor(row / 2) || j != Math.floor(col/2)) {
+        if (!omit || i != (x-1) || j != (z-1)) {
           data[(i*col) + j] = [i*spacing,0,j*spacing]
-        } 
+        }
       }
   }
-
-  console.log(data);
   
   return (
     <Instances>
-      <group position={[0,0,0]}>
+      <group position={anchor}>
         {data.map((pos, i) => {
           return (
-            <ComputerLowPoly key={i} position={pos} />
+            <ComputerLowPoly 
+              key={i} 
+              position={pos}
+              rotation={rot}  
+            />
           )} 
         )}
       </group>

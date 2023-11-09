@@ -5,7 +5,7 @@ import { OrbitControls, Html, Stats, Environment, Box } from '@react-three/drei'
 import Webpage from './WebpageContent';
 import * as THREE from 'three';
 import { useEffect } from 'react';
-import { LowPolyGrid, highPolyPos } from './LowPolyComputerTex';
+import { LowPolyGrid } from './LowPolyComputerTex';
 import { HighPolyComputer } from './HighPolyComputer';
 
 // DEBUG CONSTANTS
@@ -19,24 +19,53 @@ function ToggleOrbitControls() {
     )
   }
 }
+// Constants that control the grid of computers in the scene
+// TODO:get rid of this constant maybe? needs to be grouped with row of Low poly
+const highPolyPos = [9, 0, 30]
+
 
 export default function Home() {
   return (
     <div className={styles.scene}>
       <div className={styles.canvasContainer}>
-        <Canvas camera={{ fov: 65, position: [0, 3, 10]}}>
+        <Canvas camera={{ fov: 65, position: [0, 2, 300]}}>
           <Stats/>
             <Environment preset='city'/>
             <ambientLight intensity={0.5}/>
             <ToggleOrbitControls/>
-            <LowPolyGrid/>
+            <LowPolyGrid 
+              row={1}
+              col={50}
+              omit={true}
+              x={1}
+              z={2}
+              rot={[0,Math.PI/2,0]}
+              anchor={[-2,-1,0]}
+            />
+            <LowPolyGrid 
+              row={1}
+              col={50}
+              rot={[0,-Math.PI/2,0]}
+              anchor={[2,-1,0]}
+            />
             <HighPolyComputer position={highPolyPos}/>
+            <Box/>
           
         </Canvas>
       </div>
     </div>
   )
 }
+{/* 
+  CODE CRYO CHAMBER - no guarantee on revival
+  ---------------------------------------
+  <LowPolyGrid
+    row={7}
+    col={21}
+    spacing={3}
+  />
+
+*/}
 
 {/* 
   TODO / IDEA? 
