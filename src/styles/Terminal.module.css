@@ -58,3 +58,18 @@
       opacity: 1;
     }
   }
+
+  .matrix {
+    background: black;
+    width: var(--computer-w);
+    height: 100%;
+    overflow: hidden;
+
+  }
+
+  .html {
+    background-color: white;
+    width: var(--computer-w);
+    height: 100%;
+    overflow: hidden;
+  }
