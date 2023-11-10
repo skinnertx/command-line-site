@@ -1,12 +1,11 @@
 import styles from '@/styles/Home.module.css'
 import { Canvas } from '@react-three/fiber'
-import { OrbitControls, Html, Stats, Environment, Box } from '@react-three/drei';
+import { OrbitControls, Html, Stats, Environment, Box, CameraControls } from '@react-three/drei';
 // import { ComputerLowPoly } from '@/computerLowPoly';
 import Webpage from './WebpageContent';
 import * as THREE from 'three';
-import { useEffect } from 'react';
-import { LowPolyGrid } from './LowPolyComputerTex';
-import { HighPolyComputer } from './HighPolyComputer';
+import { MeshLambertMaterial } from "three";
+import GridAnimator from './GridAnimator';
 
 // DEBUG CONSTANTS
 const allowOrbit = true;
@@ -19,38 +18,39 @@ function ToggleOrbitControls() {
     )
   }
 }
-// Constants that control the grid of computers in the scene
-// TODO:get rid of this constant maybe? needs to be grouped with row of Low poly
-const highPolyPos = [9, 0, 30]
 
 
 export default function Home() {
   return (
     <div className={styles.scene}>
       <div className={styles.canvasContainer}>
-        <Canvas camera={{ fov: 65, position: [0, 2, 300]}}>
+        <Canvas camera={{ fov: 65, position: [0, 1, 5]}}>
           <Stats/>
             <Environment preset='city'/>
             <ambientLight intensity={0.5}/>
-            <ToggleOrbitControls/>
-            <LowPolyGrid 
-              row={1}
-              col={50}
-              omit={true}
-              x={1}
-              z={2}
-              rot={[0,Math.PI/2,0]}
-              anchor={[-2,-1,0]}
-            />
-            <LowPolyGrid 
-              row={1}
-              col={50}
-              rot={[0,-Math.PI/2,0]}
-              anchor={[2,-1,0]}
-            />
-            <HighPolyComputer position={highPolyPos}/>
-            <Box/>
-          
+            <GridAnimator/>
+            <group
+              position={[-1.81,0.36,2.03]}
+            >
+              <Html
+                transform
+                occlude
+                className={styles.content}
+                
+                rotation={[0,Math.PI/2,0]}
+                distanceFactor={0.081}
+              >
+                <div className={styles.wrapper}>
+                  <Webpage/>
+                </div>
+              </Html>
+              <Box
+                args={[0.5,0.5,0.5]}
+                position={[0,0,0]}
+                material={new MeshLambertMaterial({color: 0xfff, transparent: true, opacity: 0})}
+              ></Box>
+            </group>
+
         </Canvas>
       </div>
     </div>
