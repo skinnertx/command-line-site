@@ -12,7 +12,7 @@
 .content {
   width: var(--computer-w);
   height: var(--computer-h);
-  background: var(--computer-background);
+  background: black;
   overflow-x: auto;
   padding: 0;
   visibility: visible;
