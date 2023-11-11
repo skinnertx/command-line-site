@@ -4,8 +4,8 @@ Command: npx gltfjsx@6.2.13 highPolyComputer.glb --transform
 Files: highPolyComputer.glb [3MB] > highPolyComputer-transformed.glb [217.47KB] (93%)
 */
 
-import React, { useRef } from 'react'
-import { useGLTF,Html } from '@react-three/drei'
+import React from 'react'
+import { useGLTF } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
 import { dollyFinished } from './GridAnimator'
 import * as THREE from 'three';

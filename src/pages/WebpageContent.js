@@ -3,8 +3,6 @@ import styles from '../styles/Terminal.module.css'
 
 export default function Webpage() {
 
-
-
     useEffect(() => {
         const canvas = document.getElementById('Matrix');
         const context = canvas.getContext('2d');
@@ -60,10 +58,6 @@ export default function Webpage() {
                     }
                     rainDrops[i]++;
                 }
-
-
-                
-
             }
         };
 
@@ -73,9 +67,6 @@ export default function Webpage() {
 
     return (
         <div className={styles.html}>
-            <div className={styles.click}>
-
-            </div>
             <canvas className={styles.matrix} id="Matrix"></canvas>
         </div>
     )

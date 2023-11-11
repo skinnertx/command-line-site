@@ -12,7 +12,7 @@ export default function GridAnimator() {
     const groupRef = useRef();
     const vec = new THREE.Vector3();
     const lerpSpeed = 0.025;
-    const numCols = 200;
+    const numCols = 70;
 
     useFrame(state => {
         groupRef.current.position.lerp(vec.set(0,0,-100), lerpSpeed);
@@ -26,23 +26,18 @@ export default function GridAnimator() {
 
     return (
         <group 
-            position={[0,0,-2000]}
+            position={[0,0,-2500]}
             ref={groupRef}
         >
+            
             <LowPolyGrid 
-            row={1}
+            row={7}
             col={numCols}
             omit={true}
-            x={1}
+            x={4}
             z={35}
             rot={[0,Math.PI/2,0]}
-            anchor={[-2,-1,0]}
-            />
-            <LowPolyGrid 
-            row={1}
-            col={numCols}
-            rot={[0,-Math.PI/2,0]}
-            anchor={[2,-1,0]}
+            anchor={[-11,-1,0]}
             />
             <HighPolyComputer 
                 position={[-2, -1, 102]}
@@ -52,3 +47,17 @@ export default function GridAnimator() {
     )
 
 }
+
+{/* 
+
+            <LowPolyGrid 
+            row={5}
+            col={numCols}
+            omit={true}
+            x={4}
+            z={35}
+            rot={[0,Math.PI/2,0]}
+            anchor={[-2,-1,0]}
+            />
+
+*/}

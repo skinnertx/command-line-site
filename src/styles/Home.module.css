@@ -24,3 +24,15 @@
   height: var(--computer-h);
   transform-origin: top left;
 }
+
+.click {
+  position: absolute;
+  width: var(--computer-w);
+  height: var(--computer-h);
+  color: white;
+  overflow: hidden;
+}
+
+.click:hover {
+  cursor: pointer;
+}
