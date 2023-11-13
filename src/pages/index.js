@@ -1,5 +1,10 @@
+import CommandLineWebpage from './CommandLineWebpage';
 import MatrixAnimation from './MatrixAnimation';
 import { useState } from 'react';
+import styles from '@/styles/Page.module.css'
+
+// control whether animation plays at start
+const skipAnimation = true;
 
 {/* 
   Function that handles toggling between intro animation and command line site
@@ -8,7 +13,8 @@ import { useState } from 'react';
 */}
 function RenderToggle() {
 
-  const [showPage, setShowPage] = useState(true);
+  const [showPage, setShowPage] = useState(!skipAnimation);
+
 
   if (showPage) {
     return (
@@ -16,10 +22,7 @@ function RenderToggle() {
     )
   } else {
     return (
-      // TODO: make a webpage!
-      <div>
-        THIS IS WHERE THE FUN BEGINS
-      </div>
+      <CommandLineWebpage/>
     )
   }
 }
@@ -27,10 +30,13 @@ function RenderToggle() {
 // could consolidate render toggle with home function?
 export default function Home() {
   return (
-    <RenderToggle/>
+    <RenderToggle />
   )
 }
 {/* 
   CODE CRYO CHAMBER - no guarantee on revival
   ---------------------------------------
 */}
+
+// TODO
+// add skip button using renderRoggle

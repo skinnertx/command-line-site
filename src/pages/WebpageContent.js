@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import styles from '../styles/Terminal.module.css'
 
+
+// CONTENT FOR HTML IN INTRO ANIMATION!
 export default function Webpage() {
 
     useEffect(() => {
@@ -61,7 +63,7 @@ export default function Webpage() {
             }
         };
 
-    
+        //TODO: delay this animation until HTML is visible!
         setInterval(draw, 50);
     })
 

@@ -1,0 +1,17 @@
+.scene {
+    width: 100vw;
+    height: 100vh;
+    background: black;
+    color: #0F0;
+    overflow: hidden;
+  }
+
+.asciiArt {
+    margin: 0;
+    overflow: hidden;
+}
+
+.asciiArt > p {
+    margin: 0;
+
+}
