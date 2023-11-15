@@ -4,14 +4,39 @@
     background: black;
     color: #0F0;
     overflow: hidden;
-  }
+}
+
+.content {
+    margin: 20px;
+}
 
 .asciiArt {
     margin: 0;
     overflow: hidden;
+    margin-left: 40px;
 }
 
 .asciiArt > p {
     margin: 0;
 
+}
+
+.flexTitle {
+    display: flex;
+    flex-direction: row;
+}
+
+.revealer {
+    position: absolute;
+    width: 98vw;
+    height: 315px;
+    background: black;
+    top: 20px;
+    overflow-x: hidden;
+}
+
+.subtext {
+    margin: 15px;
+    text-align: center;
+    font-size: x-large;
 }

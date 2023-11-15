@@ -1,7 +1,6 @@
 import CommandLineWebpage from './CommandLineWebpage';
 import MatrixAnimation from './MatrixAnimation';
 import { useState } from 'react';
-import styles from '@/styles/Page.module.css'
 
 // control whether animation plays at start
 const skipAnimation = true;
