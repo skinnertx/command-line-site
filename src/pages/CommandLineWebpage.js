@@ -1,6 +1,7 @@
 import styles from '@/styles/Page.module.css';
 import TypedLine from './TypedLine';
 import { useEffect, useRef } from 'react';
+import CommandLine from './CommandLine';
 
 
 export default function CommandLineWebpage() {
@@ -9,18 +10,16 @@ export default function CommandLineWebpage() {
     let topset = 0;
     let height = 315
     let revealRef = useRef(null);
-    let revInt = null;
+    let revInt;
 
     function reveal() {
         topset += 7;
         revealRef.current.style.top = offset + topset + 'px';
         revealRef.current.style.height = (height - topset) + 'px';
-        if(height < 0) {
+        if(height < 2) {
             clearInterval(revInt);
         }
     }
-
-    
 
     useEffect(() => {
         revInt = setInterval(reveal, 70);
@@ -30,7 +29,7 @@ export default function CommandLineWebpage() {
     return (
         // TODO: make a webpage!
         <div className={styles.scene}>
-            <div className={styles.content}>
+            <div className={styles.fixedHeading}>
                 <div className={styles.flexTitle}>
                     <img src='sisyphus.gif' alt='ASCII art of Sisyphus pushing a boulder, original gif here: https://giphy.com/gifs/digital-imposter-1mposter-gWDJWMJVemkKH8tljp' />
                     <pre className={styles.asciiArt}>
@@ -61,25 +60,18 @@ export default function CommandLineWebpage() {
                 <div className={styles.subtext}>
                     <TypedLine typeSpeed={30} toPrint={['^1500SOFTWARE // FRONTEND // BACKEND DEVELOPER']}/>
                 </div>
-                
-                <div>
-                    <div>
-                        <TypedLine
-                            toPrint={['^100 First Try bitch \n GAMER']}
-                        />
-                        <TypedLine
-                            toPrint={['^100 First Try bitch \n GAMER']}
-                        />
-                    </div>
-                    <div>
-                        <TypedLine
-                            toPrint={['^1200 this is it, here i stand']}
-                        />
-                    </div>
-                </div>
+            </div>
+            <div className={styles.dynamicFooter}>
+                <CommandLine />
             </div>
 
            
         </div>
       )
 }
+
+{/* 
+    ADD A CONSOLE/TERMINAl BOX
+    ADD commands to print about me etc
+    ADD a key to show available commands
+*/}
