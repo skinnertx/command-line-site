@@ -52,18 +52,20 @@ function History() {
     }
     
     useEffect(() => {
-        setTimeout(() => {inputConRef.current.style.visibility = 'visible';}, 3600);
+        // set visibility of init animation
         setTimeout(() => {initRef.current.style.visibility = 'visible';}, 3600);
+        // set visibility of input component
+        setTimeout(() => {inputConRef.current.style.visibility = 'visible';}, 8200);
     })
 
     return (
         <div className={styles.history}>
             <div>
-                {prefix}<TypedLine startDelay={3000} toPrint={['init']}/><br/>
+                {prefix}<TypedLine startDelay={3000} typeSpeed={15} toPrint={['init sisyphus.exe']}/><br/>
                 <pre className={styles.tab} ref={initRef}>
-                    {'\t'}test gamering for init loot<br/>
-                    {'\t'}test gamering for init loot<br/>
-                    {'\t'}test gamering for init loot<br/>
+                    {'\t'}<TypedLine typeSpeed={25} startDelay={3200} toPrint={['Rolling boulder uphill']}/><br/>
+                    {'\t'}<TypedLine typeSpeed={10} startDelay={4700} toPrint={['Finished in 280ms, initiating rollback']}/><TypedLine typeSpeed={5} loopCount={3} loop={true} startDelay={6000} toPrint={['. . .']}/><br/>
+                    {'\t'}<TypedLine typeSpeed={1} startDelay={7800} toPrint={['Done, type HELP for a list of commands']}/><br/>
                 </pre>
             </div>
             {history.map(item => (

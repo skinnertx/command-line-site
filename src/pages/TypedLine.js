@@ -5,8 +5,9 @@ export default function TypedLine({
     toPrint, 
     typeSpeed=50, 
     loop=false, 
+    loopCount=Infinity,
     isDiv=false,
-    startDelay=0
+    startDelay=0,
 }) {
 
     const el = useRef(null);
@@ -18,7 +19,9 @@ export default function TypedLine({
             typeSpeed: typeSpeed,
             showCursor: false,
             loop: loop,
-            startDelay: startDelay
+            loopCount: loopCount,
+            startDelay: startDelay,
+            onComplete: function(self) {if(self.loop) {self.startDelay = 0}}
         });
 
         return () => {

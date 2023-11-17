@@ -52,12 +52,13 @@
 
 .commandContainer {
     padding: 0 5px 5px 5px;
+    font-family: 'Noto';
 }
 
 .history {
     padding-bottom: 3vh;
     overflow-wrap: anywhere;
-    font-size: x-large;
+    font-size: 25px;
 }
 
 .inputContainer {
@@ -71,7 +72,7 @@ min width must change with prefix
 defined in CommandLine.ks
 */
 .inputPrefix {
-    min-width: 200px;
+    min-width: 240px;
 }
 
 .inputBox {
@@ -85,4 +86,5 @@ defined in CommandLine.ks
     margin: 0;
     padding: 0;
     visibility: hidden;
+    font-family: 'Noto';
 }
