@@ -1,7 +1,13 @@
 import { useEffect, useRef } from 'react';
 import Typed from 'typed.js';
 
-export default function TypedLine({toPrint, typeSpeed=50, loop=false, isDiv=false}) {
+export default function TypedLine({
+    toPrint, 
+    typeSpeed=50, 
+    loop=false, 
+    isDiv=false,
+    startDelay=0
+}) {
 
     const el = useRef(null);
 
@@ -11,7 +17,8 @@ export default function TypedLine({toPrint, typeSpeed=50, loop=false, isDiv=fals
             strings: toPrint,
             typeSpeed: typeSpeed,
             showCursor: false,
-            loop: loop
+            loop: loop,
+            startDelay: startDelay
         });
 
         return () => {

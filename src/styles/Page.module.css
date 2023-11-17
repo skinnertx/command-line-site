@@ -37,7 +37,7 @@
 .revealer {
     position: absolute;
     width: 98vw;
-    height: 315px;
+    height: 320px;
     background: black;
     top: 20px;
     overflow-x: hidden;
@@ -63,8 +63,13 @@
 .inputContainer {
     display: flex;
     flex-flow: row;
+    visibility: hidden;
 }
 
+/* 
+min width must change with prefix
+defined in CommandLine.ks
+*/
 .inputPrefix {
     min-width: 200px;
 }
@@ -74,4 +79,10 @@
     flex-grow: 1;
     width: 100%;
     font-size: x-large;
+}
+
+.tab {
+    margin: 0;
+    padding: 0;
+    visibility: hidden;
 }

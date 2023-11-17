@@ -8,16 +8,15 @@ export default function CommandLineWebpage() {
 
     let offset = 20;
     let topset = 0;
-    let height = 315
+    let height = 320
     let revealRef = useRef(null);
     let revInt;
 
     function reveal() {
-        topset += 7;
-        revealRef.current.style.top = offset + topset + 'px';
-        revealRef.current.style.height = (height - topset) + 'px';
-        if(height < 2) {
-            clearInterval(revInt);
+        if(topset < 320) {
+            topset += 7;
+            revealRef.current.style.top = offset + topset + 'px';
+            revealRef.current.style.height = (height - topset) + 'px';
         }
     }
 
@@ -25,7 +24,6 @@ export default function CommandLineWebpage() {
         revInt = setInterval(reveal, 70);
     })
     
-
     return (
         // TODO: make a webpage!
         <div className={styles.scene}>
@@ -58,7 +56,7 @@ export default function CommandLineWebpage() {
                 </div>
                 <div id='reveal' className={styles.revealer} ref={revealRef}/>
                 <div className={styles.subtext}>
-                    <TypedLine typeSpeed={30} toPrint={['^1500SOFTWARE // FRONTEND // BACKEND DEVELOPER']}/>
+                    <TypedLine typeSpeed={15} toPrint={['^1500SOFTWARE // FRONTEND // BACKEND DEVELOPER']}/>
                 </div>
             </div>
             <div className={styles.dynamicFooter}>
