@@ -8,6 +8,17 @@
     flex-flow: column;
 }
 
+.fixedHeading {
+    margin: 20px;
+}
+
+.dynamicFooter {
+    flex-grow: 1;
+    overflow-y: auto;
+    width: 60vw;
+    margin: 1vh 3vw 3vw 8vh;
+}
+
 .asciiArt {
     margin: 0;
     overflow: hidden;
@@ -39,14 +50,28 @@
     height: 30px;
 }
 
-.fixedHeading {
-    margin: 20px;
+.commandContainer {
+    padding: 0 5px 5px 5px;
 }
 
+.history {
+    padding-bottom: 3vh;
+    overflow-wrap: anywhere;
+    font-size: x-large;
+}
 
-.dynamicFooter {
+.inputContainer {
+    display: flex;
+    flex-flow: row;
+}
+
+.inputPrefix {
+    min-width: 200px;
+}
+
+.inputBox {
+    color: #0F0;
     flex-grow: 1;
-    background: blue;
-    margin: 0 1vw 1vw 2vh;
-    padding: 0 5px 5px 5px;
+    width: 100%;
+    font-size: x-large;
 }
