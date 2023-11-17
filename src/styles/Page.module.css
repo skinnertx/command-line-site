@@ -48,6 +48,7 @@
     text-align: center;
     font-size: 30px;
     height: 30px;
+    color: #fff;
 }
 
 .commandContainer {
@@ -72,14 +73,19 @@ min width must change with prefix
 defined in CommandLine.ks
 */
 .inputPrefix {
-    min-width: 240px;
+    min-width: 250px;
 }
 
 .inputBox {
     color: #0F0;
+    
     flex-grow: 1;
     width: 100%;
     font-size: x-large;
+}
+
+.inputBox:focus::placeholder {
+    color: transparent;
 }
 
 .tab {
@@ -87,4 +93,8 @@ defined in CommandLine.ks
     padding: 0;
     visibility: hidden;
     font-family: 'Noto';
+}
+
+.prefix {
+    color: #fff;
 }
