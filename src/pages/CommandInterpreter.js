@@ -3,11 +3,9 @@ import styles from '@/styles/Page.module.css';
 const funcList = [
     'whoami -> display information about the creator of this site',
     'links -> print a list of other sites related to Gus Caldwell',
-    'help -> print a list of all available commands',
     'proj -> print a list of my projects',
+    'help -> print a list of all available commands',
     
-
-
     'clear -> clear the terminal history'
 ]
 
@@ -71,7 +69,7 @@ function whoami(actual) {
                 {'\t'} Hello there! My name is Gus, a recent <b>University of Texas Computer Science</b> Graduate. I've got experience in
                 multiple programming languages like <u>Python</u>, <u>C</u>, <u>C++</u>, <u>Lisp</u>, <u>SQL</u>, <u>Java</u>, and more recently
                 the <u>HTML</u>/<u>CSS</u>/<u>Javascript</u> combo. I also have worked with libraries like <u>OpenGL</u> and <u>Pandas</u>. I love the 
-                feeling of having a vision and bringing it to life with code! Learning to code can feel like a never-ending task\ - but that's what makes it so compelling to me.<br/><br/>
+                feeling of having a vision and bringing it to life with code! Learning to code can feel like a never-ending task - but that's what makes it so compelling to me.<br/><br/>
                 {'\t'}"One must image Sisyphus happy"<br/>
                 {'\t'}{'\t'}-Albert Camus<br/><br/>
             </pre>
@@ -99,7 +97,7 @@ function invalid(actual) {
         <span>
             {actual}
             <pre className={styles.indent}>
-            {'\t'}not a valid command
+            {'\t'}{actual} is not a valid command
             </pre>
         </span>
     )

@@ -14,7 +14,7 @@
 
 .dynamicFooter {
     flex-grow: 1;
-    overflow-y: auto;
+    overflow-y: scroll;
     width: 60vw;
     margin: 1vh 3vw 3vw 8vh;
 }
@@ -60,6 +60,7 @@
     padding-bottom: 3vh;
     overflow-wrap: anywhere;
     font-size: 25px;
+    
 }
 
 .inputContainer {
