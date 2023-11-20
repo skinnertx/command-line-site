@@ -82,7 +82,6 @@ function History() {
             } else {
                 const result = Interpreter(newValue);
                 addItem(result);
-                console.log(history);
             }
         }
         setTimeout(() => bottomRef.current.scrollIntoView(), 10);

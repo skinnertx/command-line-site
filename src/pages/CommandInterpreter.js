@@ -1,8 +1,10 @@
 import styles from '@/styles/Page.module.css';
 
 const funcList = [
-    'help -> print a list of all available commands',
     'whoami -> display information about the creator of this site',
+    'links -> print a list of other sites related to Gus Caldwell',
+    'help -> print a list of all available commands',
+    
 
 
     'clear -> clear the terminal history'
@@ -17,6 +19,9 @@ export default function Interpreter(command) {
 
         case 'whoami':
             return whoami(command);
+
+        case 'links':
+            return links(command);
 
         default:
             return invalid(command);
@@ -54,7 +59,20 @@ function whoami(actual) {
     )
 }
 
-
+function links(actual) {
+    return (
+        <span>
+            {actual}
+            <pre className={styles.indent}>
+                Fetching links to various profiles...
+                <ul className={styles.links}>
+                    <li><a href='https://github.com/skinnertx' target="_blank">Github</a></li>
+                    <li><a href='https://www.linkedin.com/in/gus-caldwell/' target="_blank">LinkedIn</a></li>
+                </ul>
+            </pre>
+        </span>
+    )
+}
 
 function invalid(actual) {
     return (

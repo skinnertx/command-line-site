@@ -108,6 +108,10 @@ general use to format <pre> tags in response text
     text-wrap: wrap;
 }
 
+.links {
+    margin: 0;
+}
+
 .prefix {
     color: #fff;
 }
