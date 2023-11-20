@@ -84,9 +84,8 @@ function History() {
                 addItem(result);
                 console.log(history);
             }
-
         }
-        bottomRef.current.scrollIntoView();
+        setTimeout(() => bottomRef.current.scrollIntoView(), 10);
     }
     
     // set css after time for certain elements (animation)

@@ -56,7 +56,7 @@ export default function CommandLineWebpage() {
                 </div>
                 <div id='reveal' className={styles.revealer} ref={revealRef}/>
                 <div className={styles.subtext}>
-                    <TypedLine typeSpeed={15} toPrint={['^1500SOFTWARE // FRONTEND // BACKEND DEVELOPER']}/>
+                    <TypedLine typeSpeed={15} toPrint={['^1500FRONTEND // BACKEND // SOFTWARE DEVELOPER']}/>
                 </div>
             </div>
             <div className={styles.dynamicFooter}>
