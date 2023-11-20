@@ -4,6 +4,7 @@ const funcList = [
     'whoami -> display information about the creator of this site',
     'links -> print a list of other sites related to Gus Caldwell',
     'help -> print a list of all available commands',
+    'proj -> print a list of my projects',
     
 
 
@@ -23,6 +24,9 @@ export default function Interpreter(command) {
         case 'links':
             return links(command);
 
+        case 'proj':
+            return proj(command);
+
         default:
             return invalid(command);
     }
@@ -39,6 +43,22 @@ function help(actual) {
             </pre>
         </span>
         
+    )
+}
+
+//TODO: add more projects!
+function proj(actual) {
+    return (
+        <span>
+            {actual}
+            <pre className={styles.indent}>
+                Some of my projects:
+                <ui>
+                    <li>This website! View the repository <a href='https://github.com/skinnertx/command-line-site' target="_blank">here</a></li>
+                    <li>Filler content for now</li>
+                </ui>
+            </pre>
+        </span>
     )
 }
 
@@ -65,7 +85,7 @@ function links(actual) {
             {actual}
             <pre className={styles.indent}>
                 Fetching links to various profiles...
-                <ul className={styles.links}>
+                <ul className={styles.list}>
                     <li><a href='https://github.com/skinnertx' target="_blank">Github</a></li>
                     <li><a href='https://www.linkedin.com/in/gus-caldwell/' target="_blank">LinkedIn</a></li>
                 </ul>
