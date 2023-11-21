@@ -3,7 +3,7 @@ import MatrixAnimation from './MatrixAnimation';
 import { useState } from 'react';
 
 // control whether animation plays at start
-const skipAnimation = true;
+const skipAnimation = false;
 
 {/* 
   Function that handles toggling between intro animation and command line site

@@ -36,8 +36,9 @@ function help(actual) {
             {actual}
             <pre className={styles.indent}>
             {funcList.map(item => (
-                <span>{'\t'}{item}<br/></span>
+                <span key={item} >{'\t'}{item}<br/></span>
             ))}
+            <br/>
             </pre>
         </span>
         
@@ -51,10 +52,10 @@ function proj(actual) {
             {actual}
             <pre className={styles.indent}>
                 Some of my projects:
-                <ui>
+                <ul>
                     <li>This website! View the repository <a href='https://github.com/skinnertx/command-line-site' target="_blank">here</a></li>
                     <li>Filler content for now</li>
-                </ui>
+                </ul>
             </pre>
         </span>
     )
@@ -87,6 +88,7 @@ function links(actual) {
                     <li><a href='https://github.com/skinnertx' target="_blank">Github</a></li>
                     <li><a href='https://www.linkedin.com/in/gus-caldwell/' target="_blank">LinkedIn</a></li>
                 </ul>
+                <br/>
             </pre>
         </span>
     )
@@ -98,6 +100,7 @@ function invalid(actual) {
             {actual}
             <pre className={styles.indent}>
             {'\t'}{actual} is not a valid command
+            <br/>
             </pre>
         </span>
     )

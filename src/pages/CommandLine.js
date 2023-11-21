@@ -5,7 +5,7 @@ import styles from '@/styles/Page.module.css';
 import { useEffect, useRef, useState } from "react";
 
 // animation scaler - used to speed up animations when debugging
-const aniScale = 0.2;
+const aniScale = 1;
 
 {/* 
     if this prefix is changed, min width for .inputPrefix must be adjusted
@@ -68,8 +68,35 @@ function History() {
         updateHistory(newHistory);
     }
 
+    // had to make separate handlers for each button because target could be the img, or the button itself ):
+    function handleAboutMe(e) {
+        addItem(Interpreter('whoami'));
+        setTimeout(() => bottomRef.current.scrollIntoView(), 10);
+    }
+
+    function handleLink(e) {
+        addItem(Interpreter('links'));
+        setTimeout(() => bottomRef.current.scrollIntoView(), 10);
+    }
+
+    function handleFolder(e) {
+        addItem(Interpreter('proj'));
+        setTimeout(() => bottomRef.current.scrollIntoView(), 10);
+    }
+
+    function handleHelp(e) {
+        addItem(Interpreter('help'));
+        setTimeout(() => bottomRef.current.scrollIntoView(), 10);
+    }
+
+    function handleClear(e) {
+        updateHistory([]);
+        // im aware this is stupid, but alas, tech debt of how i designed the animation makes me do this
+        introConRef.current.style.position = 'absolute';
+        introConRef.current.style.top = '-100vh';
+    }
+
     // when enter is pressed, read the input field and act accordingly
-    // TODO: figure out why command is invalid
     function handleKeyDown(e) {
         if(e.key === 'Enter') {
             //addItem();
@@ -94,22 +121,24 @@ function History() {
         setTimeout(() => {inputConRef.current.style.visibility = 'visible';}, 8200 * aniScale);
     })
 
+
+
     return (
         <div className={styles.historyContainer}>
             <div className={styles.historyButtonContainer}>
-                <button className={styles.commandButton}>
+                <button className={styles.commandButton} onClick={handleAboutMe}>
                     <img src='./AboutMe.svg' />
                 </button>
-                <button className={styles.commandButton}>
+                <button className={styles.commandButton} onClick={handleLink}>
                     <img src='./Link.svg' />
                 </button>
-                <button className={styles.commandButton}>
+                <button className={styles.commandButton} onClick={handleFolder}>
                     <img src='./Folder.svg' />
                 </button>
-                <button className={styles.commandButton}>
+                <button className={styles.commandButton} onClick={handleHelp}>
                     <img src='./Help.svg' />
                 </button>
-                <button className={styles.commandButton}>
+                <button className={styles.commandButton} onClick={handleClear}>
                     <img src='./Refresh.svg' />
                 </button>
             </div>
