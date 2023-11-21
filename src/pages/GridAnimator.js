@@ -11,13 +11,13 @@ export default function GridAnimator() {
 
     const groupRef = useRef();
     const vec = new THREE.Vector3();
-    const lerpSpeed = 0.025;
+    const lerpSpeed = 0.04;
     const numCols = 70;
 
     useFrame(state => {
-        groupRef.current.position.lerp(vec.set(0,0,-100), lerpSpeed);
+        groupRef.current.position.lerp(vec.set(0,0,-98), lerpSpeed);
 
-        if (groupRef.current.position.z > -101) {
+        if (groupRef.current.position.z > -100) {
             dollyFinished = true;
         }
 

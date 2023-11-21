@@ -5,7 +5,7 @@ import styles from '@/styles/Page.module.css';
 import { useEffect, useRef, useState } from "react";
 
 // animation scaler - used to speed up animations when debugging
-const aniScale = 1;
+const aniScale = 0.5;
 
 {/* 
     if this prefix is changed, min width for .inputPrefix must be adjusted
@@ -146,11 +146,11 @@ function History() {
 
             <div className={styles.history}>
                 <div ref={introConRef}>
-                    <Prefix/><TypedLine startDelay={3000 * aniScale} typeSpeed={15} toPrint={['init sisyphus.exe']}/><br/>
+                    <Prefix/><TypedLine startDelay={3000 * aniScale} typeSpeed={15 * aniScale} toPrint={['init sisyphus.exe']}/><br/>
                     <pre className={styles.tab} ref={initRef}>
-                        {'\t'}<TypedLine typeSpeed={25} startDelay={3200 * aniScale} toPrint={['- Rolling boulder uphill']}/><br/>
-                        {'\t'}<TypedLine typeSpeed={10} startDelay={4700 * aniScale} toPrint={['- Finished in 280ms, initiating rollback']}/><TypedLine typeSpeed={5} loopCount={3} loop={true} startDelay={6000} toPrint={['. . .']}/><br/>
-                        {'\t'}<TypedLine typeSpeed={1} startDelay={7800 * aniScale} toPrint={['- Done, type <u>HELP</u> for a list of commands']}/><br/>
+                        {'\t'}<TypedLine typeSpeed={25 * aniScale} startDelay={3200 * aniScale} toPrint={['- Rolling boulder uphill']}/><br/>
+                        {'\t'}<TypedLine typeSpeed={10 * aniScale} startDelay={4700 * aniScale} toPrint={['- Finished in 280ms, initiating rollback']}/><TypedLine typeSpeed={5 * aniScale} loopCount={3} loop={true} startDelay={6000} toPrint={['. . .']}/><br/>
+                        {'\t'}<TypedLine typeSpeed={1 * aniScale} startDelay={7800 * aniScale} toPrint={['- Done, type <u>HELP</u> for a list of commands']}/><br/>
                     </pre>
                 </div>
                 {history.map(item => (

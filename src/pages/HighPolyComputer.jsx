@@ -13,9 +13,9 @@ export function HighPolyComputer(props) {
 
   const { nodes, materials } = useGLTF('/highPolyComputer-transformed.glb')
   const startTarget = new THREE.Vector3(0,0,0);
-  const endTarget = new THREE.Vector3(-2,0.36,2.035);
-  const framePos = new THREE.Vector3(-1.61,0.36,2.035);
-  const lerpSpeed = 0.02;
+  const endTarget = new THREE.Vector3(-2,0.36,4);
+  const framePos = new THREE.Vector3(-1.6,0.36,4);
+  const lerpSpeed = 0.05;
   
   useFrame(state => {
     if (dollyFinished) {
