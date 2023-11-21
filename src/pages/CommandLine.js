@@ -80,8 +80,7 @@ function History() {
                 introConRef.current.style.position = 'absolute';
                 introConRef.current.style.top = '-100vh';
             } else {
-                const result = Interpreter(newValue);
-                addItem(result);
+                addItem(Interpreter(newValue));
             }
         }
         setTimeout(() => bottomRef.current.scrollIntoView(), 10);
@@ -96,33 +95,55 @@ function History() {
     })
 
     return (
-        <div className={styles.history}>
-            <div ref={introConRef}>
-                <Prefix/><TypedLine startDelay={3000 * aniScale} typeSpeed={15} toPrint={['init sisyphus.exe']}/><br/>
-                <pre className={styles.tab} ref={initRef}>
-                    {'\t'}<TypedLine typeSpeed={25} startDelay={3200 * aniScale} toPrint={['- Rolling boulder uphill']}/><br/>
-                    {'\t'}<TypedLine typeSpeed={10} startDelay={4700 * aniScale} toPrint={['- Finished in 280ms, initiating rollback']}/><TypedLine typeSpeed={5} loopCount={3} loop={true} startDelay={6000} toPrint={['. . .']}/><br/>
-                    {'\t'}<TypedLine typeSpeed={1} startDelay={7800 * aniScale} toPrint={['- Done, type <u>HELP</u> for a list of commands']}/><br/>
-                </pre>
+        <div className={styles.historyContainer}>
+            <div className={styles.historyButtonContainer}>
+                <button className={styles.commandButton}>
+                    <img src='./AboutMe.svg' />
+                </button>
+                <button className={styles.commandButton}>
+                    <img src='./Link.svg' />
+                </button>
+                <button className={styles.commandButton}>
+                    <img src='./Folder.svg' />
+                </button>
+                <button className={styles.commandButton}>
+                    <img src='./Help.svg' />
+                </button>
+                <button className={styles.commandButton}>
+                    <img src='./Refresh.svg' />
+                </button>
             </div>
-            {history.map(item => (
-                <HistoryItem key={item.id} {...item} />
-            ))}
-            <div className={styles.inputContainer} ref={inputConRef}>
-                <div className={styles.inputPrefix}>
-                    <Prefix/>
+            
+
+            <div className={styles.history}>
+                <div ref={introConRef}>
+                    <Prefix/><TypedLine startDelay={3000 * aniScale} typeSpeed={15} toPrint={['init sisyphus.exe']}/><br/>
+                    <pre className={styles.tab} ref={initRef}>
+                        {'\t'}<TypedLine typeSpeed={25} startDelay={3200 * aniScale} toPrint={['- Rolling boulder uphill']}/><br/>
+                        {'\t'}<TypedLine typeSpeed={10} startDelay={4700 * aniScale} toPrint={['- Finished in 280ms, initiating rollback']}/><TypedLine typeSpeed={5} loopCount={3} loop={true} startDelay={6000} toPrint={['. . .']}/><br/>
+                        {'\t'}<TypedLine typeSpeed={1} startDelay={7800 * aniScale} toPrint={['- Done, type <u>HELP</u> for a list of commands']}/><br/>
+                    </pre>
                 </div>
-                <input 
-                    className={styles.inputBox}
-                    type='text' 
-                    ref={inputRef}
-                    placeholder='click here to input command'
-                    onKeyDown={handleKeyDown} 
-                    onChange={e => {setValue(e.target.value); bottomRef.current.scrollIntoView();}}
-                />
+                {history.map(item => (
+                    <HistoryItem key={item.id} {...item} />
+                ))}
+                <div className={styles.inputContainer} ref={inputConRef}>
+                    <div className={styles.inputPrefix}>
+                        <Prefix/>
+                    </div>
+                    <input 
+                        className={styles.inputBox}
+                        type='text' 
+                        ref={inputRef}
+                        placeholder='click here to input command'
+                        onKeyDown={handleKeyDown} 
+                        onChange={e => {setValue(e.target.value); bottomRef.current.scrollIntoView();}}
+                    />
+                </div>
+                <div ref={bottomRef}> </div>
             </div>
-            <div ref={bottomRef}> </div>
         </div>
+        
     )
 }
 

@@ -4,23 +4,27 @@ import { useEffect, useRef } from 'react';
 import CommandLine from './CommandLine';
 
 
+
 export default function CommandLineWebpage() {
 
     let offset = 20;
     let topset = 0;
-    let height = 320
     let revealRef = useRef(null);
+    let height;
+    let vh;
     let revInt;
-
+    
     function reveal() {
-        if(topset < 320) {
-            topset += 7;
+        if(topset < height) {
+            topset += vh;
             revealRef.current.style.top = offset + topset + 'px';
             revealRef.current.style.height = (height - topset) + 'px';
         }
     }
 
     useEffect(() => {
+        vh = window.innerHeight / 100;
+        height = vh * 38;
         revInt = setInterval(reveal, 70);
     })
     
@@ -29,7 +33,7 @@ export default function CommandLineWebpage() {
         <div className={styles.scene}>
             <div className={styles.fixedHeading}>
                 <div className={styles.flexTitle}>
-                    <img src='sisyphus.gif' alt='ASCII art of Sisyphus pushing a boulder, original gif here: https://giphy.com/gifs/digital-imposter-1mposter-gWDJWMJVemkKH8tljp' />
+                    <img className={styles.sisyphus} src='sisyphus.gif' alt='ASCII art of Sisyphus pushing a boulder, original gif here: https://giphy.com/gifs/digital-imposter-1mposter-gWDJWMJVemkKH8tljp' />
                     <pre className={styles.asciiArt}>
                         <p>    ,o888888o.    8 8888      88    d888888o.                                                                                                </p>
                         <p>    8888     `88.  8 8888      88  .`8888:' `88.                                                                                              </p>
@@ -66,6 +70,7 @@ export default function CommandLineWebpage() {
            
         </div>
       )
+      // icons for buttons from: https://simpleicon.com/
 }
 
 {/* 

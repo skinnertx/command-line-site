@@ -8,15 +8,19 @@
     flex-flow: column;
 }
 
+.sisyphus {
+    height: 35vh;
+}
+
 .fixedHeading {
     margin: 20px;
 }
 
 .dynamicFooter {
     flex-grow: 1;
-    overflow-y: scroll;
-    width: 60vw;
+    width: 80vw;
     margin: 1vh 3vw 3vw 8vh;
+    overflow-y: scroll;
 }
 
 .asciiArt {
@@ -26,6 +30,7 @@
 }
 
 .asciiArt > p {
+    font-size: 1.5vh;
     margin: 0;
 }
 
@@ -37,7 +42,7 @@
 .revealer {
     position: absolute;
     width: 98vw;
-    height: 320px;
+    height: 38vh;
     background: black;
     top: 20px;
     overflow-x: hidden;
@@ -46,6 +51,7 @@
 .subtext {
     margin: 15px;
     text-align: center;
+    overflow: hidden;
     font-size: 30px;
     height: 30px;
     color: #fff;
@@ -56,11 +62,46 @@
     font-family: 'Noto';
 }
 
+.historyContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
 .history {
-    padding-bottom: 3vh;
     overflow-wrap: anywhere;
-    font-size: 25px;
-    
+    font-size: 2.3vh;
+    flex-grow: 1;
+    margin-left: 120px;
+}
+
+.historyButtonContainer {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    width: 5vw;
+    height: 35vh;
+    justify-content: space-evenly;
+}
+
+.commandButton {
+    flex-grow: 1;
+    height: 50px;
+    width: 50px;
+    padding: 10px;
+    background: #000;
+    border: solid;
+    border-color: #0f0;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+.commandButton:hover {
+    border-color: #fff;
+}
+
+.commandButton:active {
+    background-color: #333;
 }
 
 .inputContainer {
@@ -75,15 +116,14 @@ min width must change with prefix
 defined in CommandLine.ks
 */
 .inputPrefix {
-    min-width: 250px;
+    min-width: 23vh;
 }
 
 .inputBox {
     color: #0F0;
-    
     flex-grow: 1;
     width: 100%;
-    font-size: x-large;
+    font-size: 2.3vh;
 }
 
 .inputBox:focus::placeholder {
@@ -116,3 +156,4 @@ general use to format <pre> tags in response text
 .prefix {
     color: #fff;
 }
+

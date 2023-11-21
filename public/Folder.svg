@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 32 512 448" xmlns="http://www.w3.org/2000/svg">
+  <path d="M512,96H320l-64-64H64v64H0v384h448v-64h64V96z M480,384h-32V160H256l-64-64H96V64h146.75l64,64H480V384z" style="fill: rgb(0, 255, 0);"/>
+</svg>
