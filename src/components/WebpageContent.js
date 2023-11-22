@@ -46,7 +46,7 @@ export default function Webpage() {
                     }
                     rainDrops[i]++;
                 } else {
-                    if (rainDrops[i] != 12) {
+                    if (rainDrops[i] != 15) {
                         context.fillText(text, i*fontSize, rainDrops[i]*fontSize);
                     } else {
                         const letter = clickMe.charAt(i - 20);
