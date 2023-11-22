@@ -65,7 +65,7 @@ useGLTF.preload('/lowPolyComputerTex-transformed.glb')
   than 0 for any dimensionality. This made it easier to say "skip the model at
   x=1 and z=3" and not have to deal with any OBO errors
 */}
-export function LowPolyGrid({
+export default function LowPolyGrid({
   row = 2, 
   col = 5, 
   spacing = 3, 

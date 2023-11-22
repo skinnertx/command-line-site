@@ -9,7 +9,7 @@ import { useGLTF } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
 import { dollyFinished } from './GridAnimator'
 import * as THREE from 'three';
-export function HighPolyComputer(props) {
+export default function HighPolyComputer(props) {
 
   const { nodes, materials } = useGLTF('/highPolyComputer-transformed.glb')
   const startTarget = new THREE.Vector3(0,0,0);
