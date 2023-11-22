@@ -1,6 +1,6 @@
 import styles from '@/styles/Home.module.css'
 import { Canvas } from '@react-three/fiber'
-import { Html, Stats, Environment, Box, OrbitControls } from '@react-three/drei';
+import { Html, Environment, Box } from '@react-three/drei';
 import Webpage from './WebpageContent';
 import { MeshLambertMaterial } from "three";
 import GridAnimator from './GridAnimator';
@@ -12,10 +12,8 @@ export default function MatrixAnimation({handler}) {
     return (
       <div className={styles.scene}>
         <div className={styles.canvasContainer}>
-          <Canvas camera={{ fov: 90, position: [0, 1, 5]}}>
-            <Stats/>
+          <Canvas camera={{ fov: 90, position: [0, 0.5, 5]}}>
               <Environment preset='city'/>
-              <OrbitControls/>
               <ambientLight intensity={0.5}/>
               <GridAnimator/>
               <group
@@ -37,7 +35,7 @@ export default function MatrixAnimation({handler}) {
                 <Box
                   args={[0.5,0.5,0.5]}
                   position={[-0.0395,0,2]}
-                  material={new MeshLambertMaterial({color: 0xfff, transparent: true, opacity: 0.2})}
+                  material={new MeshLambertMaterial({color: 0xfff, transparent: true, opacity: 0})}
                 ></Box>
               </group>
           </Canvas>

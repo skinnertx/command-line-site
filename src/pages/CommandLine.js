@@ -126,21 +126,40 @@ function History() {
     return (
         <div className={styles.historyContainer}>
             <div className={styles.historyButtonContainer}>
-                <button className={styles.commandButton} onClick={handleAboutMe}>
-                    <img src='./AboutMe.svg' />
-                </button>
-                <button className={styles.commandButton} onClick={handleLink}>
-                    <img src='./Link.svg' />
-                </button>
-                <button className={styles.commandButton} onClick={handleFolder}>
-                    <img src='./Folder.svg' />
-                </button>
-                <button className={styles.commandButton} onClick={handleHelp}>
-                    <img src='./Help.svg' />
-                </button>
-                <button className={styles.commandButton} onClick={handleClear}>
-                    <img src='./Refresh.svg' />
-                </button>
+                <div className={styles.toolTip}>
+                    <span className={styles.toolTipText}>About Me</span>
+                    <button className={styles.commandButton} onClick={handleAboutMe}>
+                        <img src='./AboutMe.svg' />
+                    </button>
+                </div>
+                
+                <div className={styles.toolTip}>
+                    <span className={styles.toolTipText}>Links</span>
+                    <button className={styles.commandButton} onClick={handleLink}>
+                        <img src='./Link.svg' />
+                    </button>
+                </div>
+
+                <div className={styles.toolTip}>
+                    <span className={styles.toolTipText}>Projects</span>
+                    <button className={styles.commandButton} onClick={handleFolder}>
+                        <img src='./Folder.svg' />
+                    </button>
+                </div>
+
+                <div className={styles.toolTip}>
+                    <span className={styles.toolTipText}>Help</span>
+                    <button className={styles.commandButton} onClick={handleHelp}>
+                        <img src='./Help.svg' />
+                    </button>
+                </div>
+
+                <div className={styles.toolTip}>
+                    <span className={styles.toolTipText}>Clear</span>
+                    <button className={styles.commandButton} onClick={handleClear}>
+                        <img src='./Refresh.svg' />
+                    </button>
+                </div>
             </div>
             
 
@@ -150,7 +169,7 @@ function History() {
                     <pre className={styles.tab} ref={initRef}>
                         {'\t'}<TypedLine typeSpeed={25 * aniScale} startDelay={3200 * aniScale} toPrint={['- Rolling boulder uphill']}/><br/>
                         {'\t'}<TypedLine typeSpeed={10 * aniScale} startDelay={4700 * aniScale} toPrint={['- Finished in 280ms, initiating rollback']}/><TypedLine typeSpeed={5 * aniScale} loopCount={3} loop={true} startDelay={6000} toPrint={['. . .']}/><br/>
-                        {'\t'}<TypedLine typeSpeed={1 * aniScale} startDelay={7800 * aniScale} toPrint={['- Done, type <u>HELP</u> for a list of commands']}/><br/>
+                        {'\t'}<TypedLine typeSpeed={1 * aniScale} startDelay={7800 * aniScale} toPrint={['- Done, type <u>HELP</u> for a list of commands, or use the buttons to the left']}/><br/>
                     </pre>
                 </div>
                 {history.map(item => (

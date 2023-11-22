@@ -157,3 +157,29 @@ general use to format <pre> tags in response text
     color: #fff;
 }
 
+.toolTip {
+    position: relative;
+    display: inline-block;
+}
+
+.toolTip .toolTipText {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #0F0;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    border: solid;
+    border-color: #0F0;
+   
+    position: absolute;
+    z-index: 1;
+    top: 20%;
+    left: 70px;
+}
+
+.toolTip:hover .toolTipText {
+    
+    visibility: visible;
+  }
