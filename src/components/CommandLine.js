@@ -101,7 +101,7 @@ function History() {
         if(e.key === 'Enter') {
             //addItem();
             inputRef.current.value = '';
-            if (newValue.toLowerCase() === 'clear') {
+            if (newValue.toString().toLowerCase() === 'clear') {
                 updateHistory([]);
                 // im aware this is stupid, but alas, tech debt of how i designed the animation makes me do this
                 introConRef.current.style.position = 'absolute';

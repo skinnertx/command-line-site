@@ -10,7 +10,7 @@ const funcList = [
 ]
 
 export default function Interpreter(command) {
-    const lowCommand = command.toLowerCase(); // used for case matching
+    const lowCommand = command.toString().toLowerCase(); // used for case matching
     // pass command actual to return what user ACTUALLY typed
     switch(lowCommand) {
         case 'help':

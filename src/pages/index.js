@@ -1,5 +1,5 @@
-import CommandLineWebpage from './CommandLineWebpage';
-import MatrixAnimation from './MatrixAnimation';
+import CommandLineWebpage from '../components/CommandLineWebpage';
+import MatrixAnimation from '../components/MatrixAnimation';
 import { useState } from 'react';
 
 // control whether animation plays at start
