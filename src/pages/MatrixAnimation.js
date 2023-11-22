@@ -1,6 +1,6 @@
 import styles from '@/styles/Home.module.css'
 import { Canvas } from '@react-three/fiber'
-import { Html, Environment, Box } from '@react-three/drei';
+import { Html, Environment, Box, Plane } from '@react-three/drei';
 import Webpage from './WebpageContent';
 import { MeshLambertMaterial } from "three";
 import GridAnimator from './GridAnimator';
@@ -37,6 +37,12 @@ export default function MatrixAnimation({handler}) {
                   position={[-0.0395,0,2]}
                   material={new MeshLambertMaterial({color: 0xfff, transparent: true, opacity: 0})}
                 ></Box>
+                <Plane 
+                  args={[100,2000]} 
+                  rotation={[-Math.PI/2, 0, 0]} 
+                  position={[0,-2,0]}
+                  material={new MeshLambertMaterial({color: 0xdddddd})}
+                />
               </group>
           </Canvas>
         </div>
