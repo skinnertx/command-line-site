@@ -12,9 +12,13 @@ export default function MatrixAnimation({handler}) {
     return (
       <div className={styles.scene}>
         <div className={styles.canvasContainer}>
+          <button onClick={() => handler()} className={styles.skipButton}>
+            <span className={styles.skipText}>SKIP ANIMATION</span>
+            <span className={styles.skipArrow}>{'>'}{'>'}{'>'} </span>
+          </button>
           <Canvas camera={{ fov: 90, position: [0, 0.5, 5]}}>
               <Environment preset='city'/>
-              <ambientLight intensity={0.5}/>
+              <ambientLight intensity={1.1}/>
               <GridAnimator/>
               <group
                 position={[-1.81,0.36,2.03]}
@@ -38,10 +42,10 @@ export default function MatrixAnimation({handler}) {
                   material={new MeshLambertMaterial({color: 0xfff, transparent: true, opacity: 0})}
                 ></Box>
                 <Plane 
-                  args={[200,2000]} 
+                  args={[100,2000]} 
                   rotation={[-Math.PI/2, 0, 0]} 
                   position={[0,-2,0]}
-                  material={new MeshLambertMaterial({color: 0xdddddd})}
+                  material={new MeshLambertMaterial({color: '#fffff1'})}
                 />
               </group>
           </Canvas>

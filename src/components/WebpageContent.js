@@ -18,9 +18,11 @@ export default function Webpage() {
     
         const alphabet = katakana + latin + nums;
         const clickMe = 'CLICK ME';
-    
-        const fontSize = 32;
-        const columns = canvas.width/fontSize;
+        
+        const columns = 50;
+        const fontSize = canvas.width/columns;
+
+        const clickLineHeight = Math.ceil((canvas.height/fontSize)/2);
     
         const rainDrops = [];
     
@@ -46,7 +48,7 @@ export default function Webpage() {
                     }
                     rainDrops[i]++;
                 } else {
-                    if (rainDrops[i] != 15) {
+                    if (rainDrops[i] != clickLineHeight) {
                         context.fillText(text, i*fontSize, rainDrops[i]*fontSize);
                     } else {
                         const letter = clickMe.charAt(i - 20);

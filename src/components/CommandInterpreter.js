@@ -71,7 +71,7 @@ function whoami(actual) {
                 multiple programming languages like <u>Python</u>, <u>C</u>, <u>C++</u>, <u>Lisp</u>, <u>SQL</u>, <u>Java</u>, and more recently
                 the <u>HTML</u>/<u>CSS</u>/<u>Javascript</u> combo. I also have worked with libraries like <u>OpenGL</u> and <u>Pandas</u>. I love the 
                 feeling of having a vision and bringing it to life with code! Learning to code can feel like a never-ending task - but that's what makes it so compelling to me.<br/><br/>
-                {'\t'}"One must image Sisyphus happy"<br/>
+                {'\t'}"One must imagine Sisyphus happy"<br/>
                 {'\t'}{'\t'}-Albert Camus<br/><br/>
             </pre>
         </span>
@@ -99,7 +99,7 @@ function invalid(actual) {
         <span>
             {actual}
             <pre className={styles.indent}>
-            {'\t'}{actual} is not a valid command
+            {'\t'}{actual} is not a valid command, use <u>HELP</u> to show list of commands<br/>
             <br/>
             </pre>
         </span>

@@ -5,6 +5,14 @@ import { useState } from 'react';
 // control whether animation plays at start
 const skipAnimation = false;
 
+// TODO
+// add easter egg commands
+// fix matrix animation  for ultrawide
+// add detail to 3d scene
+// github CD/CI ?
+// set it up on guscaldwell.com
+// fix readme
+
 {/* 
   Function that handles toggling between intro animation and command line site
   yes I'm aware this is a silly way to do it, but I didn't want to set up routing
@@ -13,7 +21,6 @@ const skipAnimation = false;
 function RenderToggle() {
 
   const [showPage, setShowPage] = useState(!skipAnimation);
-
 
   if (showPage) {
     return (
@@ -32,10 +39,3 @@ export default function Home() {
     <RenderToggle />
   )
 }
-{/* 
-  CODE CRYO CHAMBER - no guarantee on revival
-  ---------------------------------------
-*/}
-
-// TODO
-// add skip button using renderRoggle
