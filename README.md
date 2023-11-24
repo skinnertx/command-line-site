@@ -10,7 +10,7 @@ I built this site using [Next.js](https://nextjs.org/docs), a framework for Reac
 
 ## Getting Started
 
-First, run the development server:
+After forking the repository to local, run the development server:
 
 ```bash
 npm run dev
