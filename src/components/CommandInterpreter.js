@@ -53,7 +53,7 @@ function proj(actual) {
             <pre className={styles.indent}>
                 Some of my projects:
                 <ul>
-                    <li>This website! View the repository <a href='https://github.com/skinnertx/command-line-site' target="_blank">here</a></li>
+                    <li>This website! View the repository <a href='https://github.com/skinnertx/command-line-site' target="_blank">here</a>. View the blog I wrote about how I made it <a href='https://medium.com/@gus.caldwell/my-personal-website-journey-40d4d49e3cea'>here</a>.</li>
                     <li>Filler content for now</li>
                 </ul>
             </pre>

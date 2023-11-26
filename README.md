@@ -26,7 +26,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## Learn More
 
-I've written up a blog post on medium that describes how I built the site, as well as some of the finer implementation details. Check it out here //TODO add link
+I've written up a blog post on medium that describes how I built the site, as well as some of the finer implementation details. Check it out [here](https://medium.com/@gus.caldwell/my-personal-website-journey-40d4d49e3cea)
 
 ## Still to Come
 
