@@ -149,6 +149,10 @@ general use to format <pre> tags in response text
     text-wrap: wrap;
 }
 
+.indent u {
+    color: #fff;
+}
+
 .list {
     margin: 0;
 }
@@ -183,3 +187,5 @@ general use to format <pre> tags in response text
     
     visibility: visible;
   }
+
+
